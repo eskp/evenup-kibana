@@ -48,10 +48,6 @@
 #   String.  Time in milliseconds for Elasticsearch to wait for responses from shards.
 #   Default: 0
 #
-# [*legacy_service_mode*]
-#   Boolean. 
-#   Default: false
-#
 # === Examples
 #
 # * Installation:
@@ -75,6 +71,7 @@ class kibana (
   $default_app_id      = $::kibana::params::default_app_id,
   $request_timeout     = $::kibana::params::request_timeout,
   $shard_timeout       = $::kibana::params::shard_timeout,
+  $service_provider    = $::kibana::params::service_provider,
 ) inherits kibana::params {
 
   if !is_integer($port) {

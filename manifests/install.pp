@@ -12,10 +12,10 @@ class kibana::install (
   $base_url            = $::kibana::base_url,
   $tmp_dir             = $::kibana::tmp_dir,
   $install_path        = $::kibana::install_path,
+  $service_provider    = $::kibana::service_provider,
 ) {
 
   $filename         = "kibana-${version}-linux-x64"
-  $service_provider = $::kibana::params::service_provider
 
   group { 'kibana':
     ensure => 'present',
