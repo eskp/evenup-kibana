@@ -60,7 +60,7 @@ class kibana::install (
     file { 'kibana-init-script':
       path    => '/etc/init.d/kibana',
       ensure  => 'file',
-      content => template('kibana/kibana.legacy.service.erb'),
+      content => template('kibana/kibana.ubuntu.service.erb'),
       mode    => '0755',
       notify  => Class['service'],
     }
